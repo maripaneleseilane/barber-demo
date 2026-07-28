@@ -285,19 +285,17 @@ background:#f4f4f4;
 
 .hero-content h1{
     margin:0;
-    font-size:clamp(2.3rem,5.5vw,4.6rem);
+    font-size:clamp(2.2rem,5vw,4.3rem);
     font-weight:800;
     line-height:1.05;
-    letter-spacing:-0.02em;
+    letter-spacing:-0.03em;
 }
 
-.hero-content p {
-  margin: 0;
-  max-width: 54ch;
-  font-size: clamp(1.02rem, 0.96rem + 0.35vw, 1.2rem);
-  line-height: 1.75;
-  text-align: left;
-  color: var(--muted-white);
+.hero-content p{
+    max-width:540px;
+    font-size:1.3rem;
+    line-height:1.2;
+    color:rgba(255,255,255,.82);
 }
 
 .hero-actions {
