@@ -61,48 +61,60 @@ body {
     left:0;
     width:100%;
 
-    display:flex;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
     align-items:center;
-    justify-content:space-between;
 
-    padding:1.35rem 2rem;
-    font-family:"Manrope",sans-serif;
-    font-size:1.03rem;
-    font-weight:500;
+    padding:1.5rem 3rem;
     z-index:100;
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: var(--white);
-  white-space: nowrap;
-  font-weight: 600;
-  font-size: clamp(1.18rem, 1.05rem + 0.5vw, 1.45rem);
-  letter-spacing: 0.08em;
-  line-height: 1;
-  padding-right: 0.4rem;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+
+    text-decoration:none;
+    color:#fff;
+
+    justify-self:start;
+}
+
+.brand i{
+    font-size:4.5rem;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:.9;
+}
+
+.brand-text span:first-child{
+    font-size:.72rem;
+    letter-spacing:.35em;
+    font-weight:600;
+}
+
+.brand-text span:last-child{
+    font-size:1.35rem;
+    font-weight:800;
+    letter-spacing:.12em;
 }
 
 .nav-links{
-grid-column:2;
-justify-self:center;
-list-style:none;
-margin:0;
-padding:.8rem 1.5rem;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:.1rem;
-width:auto;
-max-width:max-content;
-background:rgba(15,15,15,.55);
-backdrop-filter:blur(22px);
--webkit-backdrop-filter:blur(22px);
-border:1px solid rgba(255,255,255,.18);
-border-radius:999px;
-box-shadow:0 10px 30px rgba(0,0,0,.45);
+    justify-self:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.35rem;
+    margin:0;
+    padding:.55rem;
+    list-style:none;
+    background:rgba(15,15,15,.55);
+    backdrop-filter:blur(22px);
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.12);
 }
 .nav-links a{
 display:block;
@@ -156,22 +168,20 @@ color:#fff;
 }
 
 .nav-cta{
-grid-column:3;
-justify-self:end;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:.8rem 1.5rem;
-border:none;
-border-radius:999px;
-background:var(--white);
-color:#111;
-font-weight:500;
-font-size:1.03rem;
-font-family:"Manrope",sans-serif;
-text-decoration:none;
-box-shadow:0 8px 24px rgba(0,0,0,.18);
-transition:all .3s ease;
+    justify-self:end;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:.95rem 1.6rem;
+
+    border-radius:999px;
+
+    background:#fff;
+    color:#111;
+
+    font-weight:600;
 }
 
 .nav-cta::after {
@@ -186,6 +196,13 @@ background:#f4f4f4;
 .nav-cta:focus-visible {
   background-color: var(--white);
   color: var(--black);
+}
+.desktop-text{
+    display:block;
+}
+
+.mobile-icon{
+    display:none;
 }
 
 .hero-content {
@@ -265,12 +282,12 @@ background:#f4f4f4;
   }
 }
 
-.hero-content h1 {
-  margin: 0;
-  font-size: clamp(2.6rem, 7.2vw, 5.8rem);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.015em;
+.hero-content h1{
+    margin:0;
+    font-size:clamp(2.3rem,5.5vw,4.6rem);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-0.02em;
 }
 
 .hero-content p {
@@ -1407,7 +1424,7 @@ gap:1.5rem;
     display:flex !important;
     flex-direction:column;
 
-    align-items:stretch;
+    align-items:center;
     justify-content:flex-start;
 
     padding:1rem;
@@ -1457,7 +1474,7 @@ gap:1.5rem;
     width:48px;
     height:48px;
 
-    display:flex;
+    display:none !important;
     align-items:center;
     justify-content:center;
 
@@ -1471,6 +1488,15 @@ gap:1.5rem;
 
 .nav-cta i{
     font-size:1.05rem;
+}
+.desktop-text{
+    display:none;
+    font-size:1.05rem;
+}
+
+.mobile-icon{
+    display:none;
+    
 }
 .nav-links{
     display:flex;
@@ -1535,12 +1561,19 @@ gap:1.5rem;
     border-radius:16px;
 }
 
-  .cta-primary {
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+/* Add these immediately after */
+
+.cta-primary{
+    padding:1.2rem;
+    font-size:1.05rem;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.cta-secondary{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+}
 
   .scroll-indicator {
     bottom: 0.8rem;
